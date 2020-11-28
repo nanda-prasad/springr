@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "name": "Anoop Krishna",
+        "profile_img": "none",
+        "email": "anoop@gmail.com",
+        "doj":"2018-11-28T07:58:45.866Z",
+        "dateofleave":"2020-11-28T07:58:45.866Z"
+
+    },
+    {
+        "id": 2,
+        "name": "Deepak Chopra",
+        "profile_img": "none",
+        "email": "deepakc@gmail.com",
+        "doj": "2020-11-20T07:58:45.866Z",
+        "dateofleave": "2020-11-28T07:58:45.866Z"        
+    }
+]

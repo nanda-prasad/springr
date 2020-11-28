@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="row col-md-12 header-part">
+        <h3 class="">User Records</h3>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            Add New
+        </button>
+    </div>
+    <div class="row col-md-12">
+        <table mat-table [dataSource]="tabDataSource" class="table">
+            <ng-container matColumnDef="profile_img">
+                <th mat-header-cell *matHeaderCellDef>profile_img</th>
+                <td mat-cell *matCellDef="let row"><img src="../../assets/avatar-icon.png" class="avatar"></td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let row">{{row.name}}</td>
+            </ng-container>
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>Email</th>
+                <td mat-cell *matCellDef="let row">{{row.email}}</td>
+            </ng-container>
+            <ng-container matColumnDef="selected">
+                <th mat-header-cell *matHeaderCellDef>Experince</th>
+                <td mat-cell *matCellDef="let row">{{row.experience}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Action">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let row">
+                    <span (click)="remove(row)" class="pointer">
+                        <i class="fa fa-times" aria-hidden="true"></i> Remove
+                    </span>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    <div class="modal fade" id="myModal" >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content pt-3 pb-3 pl-3 pr-3">
+                <h4 class="modal-title text-center">Add new record</h4>
+                <form [formGroup]="registerForm" (ngSubmit)="submitregister(registerForm.value)">
+                    <div class="row col-md-12 form-register">
+                        <div class="col-md-6 form-label">
+                            <label>Email : </label>
+                        </div>
+                        <div class="col-md-6 form-input" >
+                            <input type="text" formControlName="email">
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feed">
+                                <div *ngIf="f.email.errors.required">Email required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-label">
+                            <label>Full Name : </label>
+                        </div>
+                        <div class="col-md-6 form-input ">
+                            <input type="text" formControlName="name">
+                            <div *ngIf="submitted && f.name.errors" class="invalid-feed">
+                                <div *ngIf="f.name.errors.required">Full Name required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-label">
+                            <label>Date of Joining : </label>
+                        </div>
+                        <div class="col-md-6 form-input">
+                            <input type="datetime-local" formControlName="doj">
+                            <div *ngIf="submitted && f.doj.errors" class="invalid-feed">
+                                <div *ngIf="f.doj.errors.required">Date of Joining required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-label">
+                            <label>Date of Leaving : </label>
+                        </div>
+                        <div class="col-md-6 form-input">
+                            <input type="datetime-local" formControlName="dateofleave">
+                            <div *ngIf="submitted && f.dateofleave.errors" class="invalid-feed">
+                                <div *ngIf="f.dateofleave.errors.required">Date of Leaving required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-label">
+                            <label>Upload image : </label>
+                        </div>
+                        <div class="col-md-6 form-input">
+                            <input type="file">
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center mt-3">
+                        <button class="savebtn">Save</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>

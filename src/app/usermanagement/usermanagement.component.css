@@ -1,0 +1,42 @@
+.header-part{
+    justify-content: space-between;
+    margin: 4% 0px 2%;
+    align-items: baseline;
+}
+.header-part h3{
+    font-size: 25px;
+}
+.add_btn{
+    padding: 5px 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+.form-register input{
+    width: 100%;
+    overflow: hidden;
+}
+.form-register .form-label{
+    margin: 2% 0px;
+}
+.form-register .form-input{
+    margin: 2% 0px;
+}
+.modal-title{
+    margin: 3%;
+}
+.savebtn{
+    padding: 10px 50px;
+    border-radius: 5px;
+}
+.invalid-feed {
+  color: red;
+  font-size: 13px;
+  font-weight: none;
+}
+.avatar{
+    width: 50px;
+}
+.pointer{
+    cursor: pointer;
+}
